@@ -16,7 +16,7 @@ class TransportTableSeeder extends Seeder
            
            for ($i=0; $i < 40; $i++){    
            $transport = new Transport();
-           $transport->trader='1';
+           $transport->users_id='1';
            $transport->adress = $faker->address;
            $transport->mark_vechicle= $faker->country;
            $transport->priority = '1';

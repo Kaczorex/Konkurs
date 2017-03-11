@@ -4,18 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Transport extends Migration
-{
+class Transport extends Migration {
+
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('transports', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('trader')->unsigned;
+            $table->integer('users_id')->unsigned();
             $table->string('adress');
             $table->string('mark_vechicle');
             $table->integer('priority')->unsigned;
@@ -26,25 +25,20 @@ class Transport extends Migration
             $table->timestamps();
         });
 
-            Schema::table('transports', function (Blueprint $table) {
-            $table->foreign('trader')
+       Schema::table('transports', function (Blueprint $table) {
+            $table->foreign('users_id')
                     ->references('id')
                     ->on('users');  
         });
-        Schema::table('transports', function (Blueprint $table) {
-            $table->foreign('driver')
-                    ->references('id')
-                    ->on('drivers');
-        });
-        }
+    }
 
     /**
      * Reverse the migrations.
      *
      * @return void
      */
-    public function down()
-    {
-          Schema::dropIfExists('transport');
+    public function down() {
+        Schema::dropIfExists('transport');
     }
+
 }
