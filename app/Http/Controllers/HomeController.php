@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
-    }
+      //   return view('home'); <- puki co aby był latwiejszy dostęp
+        return redirect('Transport'); // do transportu
+     }
 }

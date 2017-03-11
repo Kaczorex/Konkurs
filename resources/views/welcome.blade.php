@@ -77,10 +77,10 @@
                 </div>
             @endif
 
-            <div class="content">
+            <div class="content"><a href="{{ url('/Transport') }}">
                 <div class="title m-b-md">
                     Laravel
-                </div>
+                </div></a>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
