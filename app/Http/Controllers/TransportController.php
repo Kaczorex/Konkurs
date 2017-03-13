@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Transport;
 
 class TransportController extends Controller
@@ -18,13 +19,22 @@ class TransportController extends Controller
      */
     public function index()
     {
-       $transports = Transport::paginate(10);
-       
         
-        return view('transport.index', compact('transports'));
+        
+        
+       $transports = DB::table('transports')->leftJoin('users', 'users.id', '=', 'transports.users_id')->paginate(15);
+
+       
+        //echo view('transport.ModalAddDeparture');
+        return view('transport.index',['transports' => $transports]);
+        
+        
     }
 
     /**
+     *   $transports = Transport::paginate(10);
+     *   return view('transport.index', compact('transports'));
+     * 
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

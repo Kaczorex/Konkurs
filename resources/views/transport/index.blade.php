@@ -1,24 +1,29 @@
 @extends('layouts.app')
+
 @section('content')
+
 
 
 <div class="container">
 
-    
     <div class="addToTable">
-        <button class="btn btn-primary">Dodaj wyjazd</button>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            Dodaj wyjazd
+        </button>
+        @include('transport.ModalAddDeparture')
     </div>
-    
+    <br/>
+
     <div class="table">
-        
+
         <table class="table table-transport table-condensed">
             <thead class="">
                 <tr class="success bold">
-                    <td>Handlowiec</td>
+                    <td style="width: 20%">Handlowiec</td>
                     <td>Adres dostawy</td>
                     <td>Marka samochodu</td>
                     <td>Priorytet</td>
-                    <td>Godzina</td>
+                    <td style="width: 10%;">Godzina</td>
                     <td>Dok.Tranpostowe </br>
                         Uwagi</td>
                     <td>Kierowca</td></b>
@@ -28,35 +33,44 @@
             <tbody>
                 @foreach($transports as $departure)
                 <tr>
-                    <td>{{$departure->trader}}</td>
+                    <td>{{$departure->name}}</td>
                     <td>{{$departure->adress}}</td>
                     <td>{{$departure->mark_vechicle}}</td>
                     @if ($departure->priority=='1')
                     <td>normalny
-                    @elseif ($departure->priority=='2')
+                        @elseif ($departure->priority=='2')
                     <td>średni
-                    @elseif ($departure->priority=='3')
+                        @elseif ($departure->priority=='3')
                     <td style="background:#ff9b9b;">wysoki 
-                    @endif
+                        @endif
                     </td>
-                    <td>{{$departure->time}}</td>
+                    @if ($departure->time=='1')
+                    <td>Cały dzień
+                        @elseif ($departure->time=='2')
+                    <td>Rano
+                        @elseif ($departure->time=='3')
+                    <td> Po południu
+                        @endif
+
+                    </td>
                     <td>{{$departure->comments}}</td>
                     <td>{{$departure->driver}}</td>
                 </tr>
                 @endforeach
             </tbody>
-            
-            
+
+
         </table>
-        {{$transports->links()}}
+
     </div>
-    
-    
-    
+
+    {{$transports->links()}}
+
 </div>
-
-
-
-
-
+@endsection
+@section('page_title')
+   @parent
+      Strona domowa utworzona z u
+ĝ
+yciem systemu Blade
 @endsection
