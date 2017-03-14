@@ -21,8 +21,12 @@
                     {{ Form::select('priority', array('1'=>'Normalny','2'=>'Średni','3'=>'Wysoki'),'1',['class'=>'form-control']) }}
                 </div>
                     {{ Form::label('time',"Pora dnia") }}
-                    {{ Form::select('time',array('1'=>'Caly dzien','2'=>'Rano','3'=>'Po południu')) }}
+                    {{ Form::select('time',array('1'=>'Caly dzien','2'=>'Rano','3'=>'Po południu'),'1',['class'=>'form-control']) }}
 
+                <div class="form-group">
+                    {{ Form::label('comments',"Uwagi") }}
+                    {{ Form::textarea('comments',null, ['size' => '2x3','class'=>'form-control']) }}
+                </div>
                 <div class="form-group">
 
                 </div>
