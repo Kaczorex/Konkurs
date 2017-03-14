@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\TransportRequest;
 use Illuminate\Support\Facades\DB;
 use App\Transport;
 
@@ -22,7 +23,7 @@ class TransportController extends Controller
         
         
         
-       $transports = DB::table('transports')->leftJoin('users', 'users.id', '=', 'transports.users_id')->paginate(15);
+       $transports = DB::table('transports')->leftJoin('users', 'users.id', '=', 'transports.users_id')->orderBy('transports.id', 'desc')->paginate(10);
 
        
         //echo view('transport.ModalAddDeparture');
@@ -41,18 +42,18 @@ class TransportController extends Controller
      */
     public function create()
     {
-        //
+                return view('transport.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  TramsportRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TransportRequest $request)
     {
-        //
+        $adress = $request->input('adress');
     }
 
     /**

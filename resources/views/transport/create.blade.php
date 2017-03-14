@@ -1,14 +1,14 @@
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-            Dodaj wyjazd
-        </button>
+   
+@extends('layouts.app')
+
+@section('content')
 
 
-<div class="modal  fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+<div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Wprowadzanie wyjazdu</h4>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                 
          
             </div>
@@ -16,7 +16,7 @@
                 {{ Form::open(['route'=>'transport.store']) }}
        @if ($errors -> any())
           
-                 @foreach ($errors->all() as $error)
+                    @foreach ($errors->all() as $error)
                     <div class="alert alert-danger"> {{$error}}</div>
                 @endforeach
                
@@ -56,3 +56,5 @@
         </div>
     </div>
 </div>       
+
+@endsection

@@ -7,9 +7,13 @@
 <div class="container">
 
     <div class="addToTable">
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-            Dodaj wyjazd
-        </button>
+         @if ($errors -> any())
+          
+                 @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger"> {{$error}}</div>
+                @endforeach
+               
+                @endif
         @include('transport.ModalAddDeparture')
     </div>
     <br/>
@@ -67,10 +71,4 @@
     {{$transports->links()}}
 
 </div>
-@endsection
-@section('page_title')
-   @parent
-      Strona domowa utworzona z u
-ĝ
-yciem systemu Blade
 @endsection
