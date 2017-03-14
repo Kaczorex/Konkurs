@@ -7,7 +7,20 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-##testuje gita
+
+##    Add to app.php 
+##  providers
+##            Barryvdh\Debugbar\ServiceProvider::class,
+##           Collective\Html\HtmlServiceProvider::class,
+##
+##   aliases 
+##          'Debugbar' => Barryvdh\Debugbar\Facade::class,
+##         'Form' => Collective\Html\FormFacade::class,
+##        'Html' => Collective\Html\HtmlFacade::class,
+##
+## type in console 
+##    composer require "laravelcollective/html":"^5.3.0"
+##    composer require barryvdh/laravel-debugbar
 
 ## About Laravel
 
