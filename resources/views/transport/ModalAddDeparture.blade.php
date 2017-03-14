@@ -6,12 +6,28 @@
                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
             </div>
             <div class="modal-body">
-                informacje o nowym modalu
-                typu
-                info
-                kiedy
-                co i
-                jakaa
+                {{ Form::open(['route'=>'transport.store']) }}
+
+                <div class="form-group">
+                    {{ Form::label('adress',"Adres dostawy") }}
+                    {{ Form::text('adress',null,['class'=>'form-control']) }}
+                </div>
+                <div class="form-group">
+                    {{ Form::label('mark_vechicle',"Marka samochodu") }}
+                    {{ Form::select('mark_vechicle', array('1' => 'HDS', '2' => 'Fiat','3'=>'Transit'), null,['class'=>'form-control']) }}
+                </div>
+                <div class="form-group">
+                    {{ Form::label('priority',"Priorytet") }}
+                    {{ Form::select('priority', array('1'=>'Normalny','2'=>'Średni','3'=>'Wysoki'),'1',['class'=>'form-control']) }}
+                </div>
+                    {{ Form::label('time',"Pora dnia") }}
+                    {{ Form::select('time',array('1'=>'Caly dzien','2'=>'Rano','3'=>'Po południu')) }}
+
+                <div class="form-group">
+
+                </div>
+                {{ Form::close() }}
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

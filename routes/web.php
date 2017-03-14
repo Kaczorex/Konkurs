@@ -19,7 +19,23 @@ Route::group([
     'middleware' => 'roles',
     'roles' => ['Administrator','Administrator Transportu']
         ], function() {
-    Route::resource('Transport', 'TransportController');
+
+    
+       Route::get('Transport', [
+        'uses' => 'TransportController@index',
+        'as' => 'transport.index'
+    ]);
+       Route::get('Transport/create', [
+        'uses' => 'TransportController@create',
+        'as' => 'transport.create'
+    ]);
+       Route::post('Transport/store', [
+        'uses' => 'TransportController@store',
+        'as' => 'transport.store'
+    ]);
+
+    
+
 });
 
 Auth::routes();
