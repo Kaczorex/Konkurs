@@ -2,22 +2,17 @@
 
 @section('content')
 
-
-
 <div class="container">
-
     <div class="addToTable">
-         @if ($errors -> any())
-          
-                 @foreach ($errors->all() as $error)
-                    <div class="alert alert-danger"> {{$error}}</div>
-                @endforeach
-               
-                @endif
+        @if ($errors -> any())
+        @foreach ($errors->all() as $error)
+        <div class="alert alert-danger"> {{$error}}</div>
+        @endforeach
+        @endif
         @include('transport.ModalAddDeparture')
+
     </div>
     <br/>
-
     <div class="table">
 
         <table class="table table-transport table-condensed">

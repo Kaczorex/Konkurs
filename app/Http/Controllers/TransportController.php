@@ -7,8 +7,8 @@ use App\Http\Requests\TransportRequest;
 use Illuminate\Support\Facades\DB;
 use App\Transport;
 
-class TransportController extends Controller
-{
+class TransportController extends Controller {
+
     public function __construct() {
         //
     }
@@ -18,18 +18,15 @@ class TransportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        
-        
-        
-       $transports = DB::table('transports')->leftJoin('users', 'users.id', '=', 'transports.users_id')->orderBy('transports.id', 'desc')->paginate(10);
+    public function index() {
 
-       
+
+
+        $transports = DB::table('transports')->leftJoin('users', 'users.id', '=', 'transports.users_id')->orderBy('transports.id', 'desc')->paginate(10);
+
+
         //echo view('transport.ModalAddDeparture');
-        return view('transport.index',['transports' => $transports]);
-        
-        
+        return view('transport.index', ['transports' => $transports]);
     }
 
     /**
@@ -40,9 +37,8 @@ class TransportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-                return view('transport.create');
+    public function create() {
+          return view('pages.index');
     }
 
     /**
@@ -51,9 +47,11 @@ class TransportController extends Controller
      * @param  TramsportRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TransportRequest $request)
-    {
-        $adress = $request->input('adress');
+    public function store(TransportRequest $request) {
+        
+        Transport::create($request->all());
+        
+        return redirect()->route('transport.index');
     }
 
     /**
@@ -62,8 +60,7 @@ class TransportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -73,8 +70,7 @@ class TransportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -85,8 +81,7 @@ class TransportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -96,8 +91,8 @@ class TransportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }

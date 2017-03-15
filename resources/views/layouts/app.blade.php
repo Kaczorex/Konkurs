@@ -13,12 +13,14 @@
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/Transport.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/jquery-ui.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/jquery-ui.structure.css') }}" rel="stylesheet">
 
         <!-- Scripts -->
         <script>
-            window.Laravel = {!! json_encode([
-                    'csrfToken' => csrf_token(),
-            ]) !!};
+window.Laravel = {!! json_encode([
+        'csrfToken' => csrf_token(),
+]) !!};
         </script>
     </head>
     <body>
@@ -78,14 +80,19 @@
                     </div>
                 </div>
             </nav>
-         @yield('page_title')
- 
+            @yield('page_title')
+
             @yield('content')
-         
+
 
         </div>
 
-        <!-- Scripts -->
+        <!-- Scripts -->    
         <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/transport.js') }}"></script>
+        <script src="{{ asset('jquery/jquery-1.12.4.js') }}"></script>
+        <script src="{{ asset('jquery/jquery-ui.js') }}"></script>
+       
+      
     </body>
 </html>
