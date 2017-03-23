@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/konkurs/laravel/public/css/Transport.css</file>
+            <file>file:/C:/xampp/htdocs/konkurs/laravel/resources/views/transport/ModalAddDeparture.blade.php</file>
+            <file>file:/C:/xampp/htdocs/konkurs/laravel/public/js/transport.js</file>
+            <file>file:/C:/xampp/htdocs/konkurs/laravel/database/factories/ModelFactory.php</file>
             <file>file:/C:/xampp/htdocs/konkurs/laravel/resources/views/transport/index.blade.php</file>
+            <file>file:/C:/xampp/htdocs/konkurs/laravel/app/Http/Controllers/TransportController.php</file>
             <file>file:/C:/xampp/htdocs/konkurs/laravel/resources/views/layouts/app.blade.php</file>
         </group>
     </open-files>

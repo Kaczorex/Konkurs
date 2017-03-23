@@ -13,6 +13,7 @@
 
     </div>
     <br/>
+    testujemy gita do nowego  kompa
     <div class="table">
 
         <table class="table table-transport table-condensed">

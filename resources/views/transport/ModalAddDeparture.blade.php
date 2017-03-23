@@ -17,8 +17,8 @@
                 <div class="alert alert-danger"> {{$error}}</div>
                 @endforeach
                 @endif
-           {{Form::hidden('users_id', Auth::user()->id ) }}
-                
+                {{Form::hidden('users_id', Auth::user()->id ) }}
+
                 <div class="form-group">
                     {{ Form::label('adress',"Adres dostawy") }}
                     {{ Form::text('adress',null,['class'=>'form-control']) }}
@@ -30,24 +30,25 @@
                 <div class="form-group">
                     {{ Form::label('priority',"Priorytet") }}
                     {{ Form::select('priority', array('1'=>'Normalny','2'=>'Średni','3'=>'Wysoki'),'1',['class'=>'form-control']) }}
+                </div>  
+                <div class="form-group">
+                    {{ Form::label('time',"Pora dnia") }}
+                    {{ Form::select('time',array('1'=>'Caly dzien','2'=>'Rano','3'=>'Po południu'),'1',['class'=>'form-control']) }}
                 </div>
-                {{ Form::label('time',"Pora dnia") }}
-                {{ Form::select('time',array('1'=>'Caly dzien','2'=>'Rano','3'=>'Po południu'),'1',['class'=>'form-control']) }}
-
                 <div class="form-group">
                     {{ Form::label('comments',"Uwagi") }}
                     {{ Form::textarea('comments',null, ['size' => '2x3','class'=>'form-control']) }}
                 </div>
                 <div class="form-group">
-                 {{Form::label('date',"Kiedy wyjazd") }}
-                 <div class="form-inline">
-                 {{Form::date('date',null,['id'=>'datepicker','class'=>'form-control']) }}   
-                 {{Form::text(null,null,['id'=>'alternate','class'=>'form-control','size'=>'35x1','readonly'=>'true']) }}
-                 </div>
+                    {{Form::label('date',"Kiedy wyjazd") }}
+                    <div class="form-inline">
+                        {{Form::date('date',null,['id'=>'datepicker','class'=>'form-control']) }}   
+                        {{Form::text(null,null,['id'=>'alternate','class'=>'form-control','size'=>'35x1','readonly'=>'true']) }}
+                    </div>
                 </div>
-                      
+
                 {{Form::hidden('driver','2') }}     
-                
+
                 <div class="modal-footer">
                     {{ Form::submit('Zapisz',['class'=>'btn btn-primary']) }}
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
