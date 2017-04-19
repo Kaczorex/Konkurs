@@ -20,7 +20,7 @@
             <thead class="">
                 <tr class="success bold">
                     <td style="width: 20%">Handlowiec</td>
-                    <td>Adres dostawya</td>
+                    <td>Adres dostawy</td>
                     <td>Marka samochodu</td>
                     <td>Priorytet</td>
                     <td style="width: 10%;">Godzina</td>
