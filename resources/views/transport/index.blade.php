@@ -20,7 +20,7 @@
             <thead class="">
                 <tr class="success bold">
                     <td style="width: 20%">Handlowiec</td>
-                    <td>Adres dostawy</td>
+                    <td>Adres dostawya</td>
                     <td>Marka samochodu</td>
                     <td>Priorytet</td>
                     <td style="width: 10%;">Godzina</td>
@@ -28,7 +28,7 @@
                         Uwagi</td>
                     <td>Kierowca</td></b>
                     </td>
-                </tr>
+                </tr>a
             </thead>
             <tbody>
                 @foreach($transports as $departure)
